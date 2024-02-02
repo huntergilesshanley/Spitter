@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+<title>Spitter</title>
+</head>
+<body>
+<script>
+const params = new Proxy(new URLSearchParams(window.location.search), {
+  get: (searchParams, prop) => searchParams.get(prop),
+});
+/* https://stackoverflow.com/a/901144 */
+let value = params.saliva; 
+document.body.innerHTML += value;
+</script>
+</body>
+</html>
